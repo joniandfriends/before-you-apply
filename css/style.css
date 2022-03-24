@@ -1,0 +1,69 @@
+:root {
+  --primary: #0076bd;
+  --secondary: #1b95de;
+}
+
+/* 
+How to use CSS variables:
+
+.bg-blue {
+  background-color: var(--primary);
+
+} */
+
+body {
+  width: 800px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "neue-haas-grotesk-display", Verdana, Arial, sans-serif !important;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--primary);
+}
+
+.hide {
+  display: none;
+}
+
+.individual-volunteer-text {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+li {
+  align-items: flex-start;
+  display: flex;
+}
+
+li input[type="checkbox"] {
+  margin: 6px 8px 0 0;
+}
+
+.fa-plus:before,
+.fa-minus:before {
+  content: "";
+}
+
+span.pp-accordion-button-icon {
+  min-width: 85px;
+}
+
+
+@media screen and (min-width: 768px) {
+  ul {
+    padding-left: 0;
+  }
+}
