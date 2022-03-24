@@ -10,6 +10,7 @@ const groupText = document.getElementById('group-text')
 const individualText = document.getElementById('individual-text')
 const errorMessage = document.getElementById('error-message')
 const applyButtonUrl = `https://secure.joniandfriends.org/site/TRR/FamilyRetreats/General?pg=tfind&fr_id=${retreatId}&fr_tm_opt=new&s_partType=${participantType}`
+const pcaApplyButtonUrl = `https://secure.joniandfriends.org/site/TRR/FamilyRetreats/General?pg=tfind&fr_id=${retreatId}&fr_tm_opt=existing&s_partType=${participantType}`
 
 switch(participantType){
   case 'primary':
@@ -27,11 +28,10 @@ switch(participantType){
     applyButton.classList.remove('hide')
   break;
   case 'pca':
-    applyButton.href = applyButtonUrl
+    applyButton.href = pcaApplyButtonUrl
     applyButton.classList.remove('hide')
   break;
   default:
     // We should never match this case!
-    errorMessage.classList.remove('hide')
     applyButton.href = '/what-are-you-talking-about-willis'
 }
