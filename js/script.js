@@ -32,7 +32,6 @@ switch(eventType) {
     }
   break;
   case 'internationalFamilyRetreat':
-
     groupText.classList.add('hide')
     internationalFRText.classList.remove('hide')
   break;
@@ -41,7 +40,7 @@ switch(eventType) {
 }
 
 switch(participantType){
-  case 'primary' || 'volunteer' || 'volunteerGroup':
+  case 'primary' && 'volunteer' && 'volunteerGroup':
     applyButton.href = applyButtonUrl
     applyButton.classList.remove('hide')
   break;
