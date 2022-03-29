@@ -10,6 +10,7 @@ const eventType = urlParams.get('event')
 const eventTitle = document.querySelector('.event-title')
 const groupText = document.getElementById('group-text')
 const individualText = document.getElementById('individual-text')
+const internationalFRText = document.querySelector('#international-retreat-text')
 const errorMessage = document.getElementById('error-message')
 const familyVolunteerAccordion = document.getElementById('family-volunteer-accordion')
 const applyButton = document.getElementById('apply-btn')
@@ -17,32 +18,32 @@ const applyButton = document.getElementById('apply-btn')
 const applyButtonUrl = `https://secure.joniandfriends.org/site/TRR/FamilyRetreats/General?pg=tfind&fr_id=${retreatId}&fr_tm_opt=new&s_partType=${participantType}`
 const pcaApplyButtonUrl = `https://secure.joniandfriends.org/site/TRR/FamilyRetreats/General?pg=tfind&fr_id=${retreatId}&fr_tm_opt=existing&s_partType=${participantType}`
 
+const eventTitles = [
+  "Family Retreat",
+  "International Family Retreat"
+]
+
 switch(eventType) {
   case 'familyRetreat':
-    eventTitle.innerText = "Family Retreat"
+    eventTitle.innerText = eventTitles[0]
+    if (participantType === 'volunteer') {
+      groupText.classList.add('hide')
+      individualText.classList.remove('hide')
+    }
   break;
   case 'internationalFamilyRetreat':
-    eventTitle.innerText = "International Family Retreat"
+    eventTitle.innerText = eventTitles[1]
+    groupText.classList.add('hide')
+    internationalFRText.classList.remove('hide')
   break;
   default:
     console.log('Default event title')
 }
 
 switch(participantType){
-  case 'primary':
+  case 'primary' || 'volunteer' || 'volunteerGroup':
     applyButton.href = applyButtonUrl
     applyButton.classList.remove('hide')
-  break;
-  case 'volunteer':
-    groupText.classList.add('hide')
-    individualText.classList.remove('hide')
-    applyButton.href = applyButtonUrl
-    applyButton.classList.remove('hide')
-  break;
-  case 'volunteerGroup':
-    applyButton.href = applyButtonUrl
-    applyButton.classList.remove('hide')
-    familyVolunteerAccordion.classList.add('hide')
   break;
   case 'pca':
     applyButton.href = pcaApplyButtonUrl
