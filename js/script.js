@@ -7,7 +7,6 @@ const retreatId = urlParams.get('fr_id')
 const participantType = urlParams.get('s_partType')
 const eventType = urlParams.get('event')
 
-const eventTitle = document.querySelector('.event-title')
 const groupText = document.getElementById('group-text')
 const individualText = document.getElementById('individual-text')
 const internationalFRText = document.querySelector('#international-retreat-text')
@@ -40,7 +39,7 @@ switch(eventType) {
 }
 
 switch(participantType){
-  case 'primary' && 'volunteer' && 'volunteerGroup':
+  case 'primary' || 'volunteer' || 'volunteerGroup':
     applyButton.href = applyButtonUrl
     applyButton.classList.remove('hide')
   break;
