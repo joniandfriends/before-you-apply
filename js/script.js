@@ -33,29 +33,34 @@ switch(eventType) {
     if (participantType === 'volunteer') {
       groupText.classList.add('hide')
       individualText.classList.remove('hide')
-    } else {
-      groupText.classList.remove('hide')
     }
   break;
   case 'internationalFamilyRetreat':
+    groupText.classList.add('hide')
     internationalFRText.classList.remove('hide')
   break;
   case 'marriageGetaway':
+    groupText.classList.add('hide')
     marriageGetawayText.classList.remove('hide')
   break;
   case 'singleParentGetaway':
+    groupText.classList.add('hide')
     singleParentGetawayText.classList.remove('hide')
   break;
   case 'warriorGetaway':
+    groupText.classList.add('hide')
     warriorGetawayText.classList.remove('hide')
   break;
   case 'wheels':
+    groupText.classList.add('hide')
     wheelsText.classList.remove('hide')
   break;
   case 'internship':
+    groupText.classList.add('hide')
     internshipText.classList.remove('hide')
   break;
   default:
+    groupText.classList.add('hide')
     noEventError.classList.remove('hide')
 }
 
