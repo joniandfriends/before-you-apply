@@ -7,8 +7,8 @@ const retreatId = urlParams.get('fr_id')
 const participantType = urlParams.get('s_partType')
 const eventType = urlParams.get('event')
 
-const groupText = document.getElementById('group-text')
-const individualText = document.getElementById('individual-text')
+const groupText = document.querySelector('#group-text')
+const individualText = document.querySelector('#individual-text')
 const internationalFRText = document.querySelector('#international-retreat-text')
 const marriageGetawayText = document.querySelector('#marriage-getaway-text')
 const singleParentGetawayText = document.querySelector('#single-parent-text')
@@ -17,14 +17,12 @@ const wheelsText = document.querySelector('#wheels-text')
 const internshipText = document.querySelector('#internship-text')
 const noEventError = document.querySelector('#no-event-error')
 
-const errorMessage = document.getElementById('error-message')
+const errorMessage = document.querySelector('#error-message')
 const familyVolunteerAccordion = document.querySelector('#family-volunteer-accordion')
-const applyButton = document.getElementById('apply-btn')
+const applyButton = document.querySelector('#apply-btn')
 
 const applyButtonUrl = `https://secure.joniandfriends.org/site/TRR/FamilyRetreats/General?pg=tfind&fr_id=${retreatId}&fr_tm_opt=new&s_partType=${participantType}`
 const pcaApplyButtonUrl = `https://secure.joniandfriends.org/site/TRR/FamilyRetreats/General?pg=tfind&fr_id=${retreatId}&fr_tm_opt=existing&s_partType=${participantType}`
-
-
 
 if (eventType !== 'familyRetreat') {
   familyVolunteerAccordion.classList.add('hide')
