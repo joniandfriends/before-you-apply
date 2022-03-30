@@ -10,6 +10,13 @@ const eventType = urlParams.get('event')
 const groupText = document.getElementById('group-text')
 const individualText = document.getElementById('individual-text')
 const internationalFRText = document.querySelector('#international-retreat-text')
+const marriageGetawayText = document.querySelector('#marriage-getaway-text')
+const singleParentGetawayText = document.querySelector('#single-parent-text')
+const warriorGetawayText = document.querySelector('#warrior-getaway-text')
+const wheelsText = document.querySelector('#wheels-text')
+const internshipText = document.querySelector('#internship-text')
+const noEventError = document.querySelector('#no-event-error')
+
 const errorMessage = document.getElementById('error-message')
 const familyVolunteerAccordion = document.querySelector('#family-volunteer-accordion')
 const applyButton = document.getElementById('apply-btn')
@@ -28,18 +35,42 @@ switch(eventType) {
     if (participantType === 'volunteer') {
       groupText.classList.add('hide')
       individualText.classList.remove('hide')
+    } else {
+      groupText.classList.remove('hide')
     }
   break;
   case 'internationalFamilyRetreat':
-    groupText.classList.add('hide')
     internationalFRText.classList.remove('hide')
   break;
+  case 'marriageGetaway':
+    marriageGetawayText.classList.remove('hide')
+  break;
+  case 'singleParentGetaway':
+    singleParentGetawayText.classList.remove('hide')
+  break;
+  case 'warriorGetaway':
+    warriorGetawayText.classList.remove('hide')
+  break;
+  case 'wheels':
+    wheelsText.classList.remove('hide')
+  break;
+  case 'internship':
+    internshipText.classList.remove('hide')
+  break;
   default:
-    console.log('Default event title')
+    noEventError.classList.remove('hide')
 }
 
 switch(participantType){
-  case 'primary' || 'volunteer' || 'volunteerGroup':
+  case 'primary':
+    applyButton.href = applyButtonUrl
+    applyButton.classList.remove('hide')
+  break;
+  case 'volunteer':
+    applyButton.href = applyButtonUrl
+    applyButton.classList.remove('hide')
+  break;
+  case 'volunteerGroup':
     applyButton.href = applyButtonUrl
     applyButton.classList.remove('hide')
   break;
