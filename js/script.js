@@ -22,6 +22,7 @@ const familyVolunteerAccordion = document.querySelector('#family-volunteer-accor
 const applyButton = document.querySelector('#apply-btn')
 
 const applyButtonUrl = `https://secure.joniandfriends.org/site/TRR/FamilyRetreats/General?pg=tfind&fr_id=${retreatId}&fr_tm_opt=new&s_partType=${participantType}`
+const volunteerApplyButtonUrl = `https://secure.joniandfriends.org/site/TRR/FamilyRetreats/General?pg=tfind&fr_id=${retreatId}&fr_tm_opt=none&s_partType=${participantType}`
 const pcaApplyButtonUrl = `https://secure.joniandfriends.org/site/TRR/FamilyRetreats/General?pg=tfind&fr_id=${retreatId}&fr_tm_opt=existing&s_partType=${participantType}`
 
 if (eventType !== 'familyRetreat') {
@@ -70,7 +71,7 @@ switch(participantType){
     applyButton.classList.remove('hide')
   break;
   case 'volunteer':
-    applyButton.href = applyButtonUrl
+    applyButton.href = volunteerApplyButtonUrl
     applyButton.classList.remove('hide')
   break;
   case 'volunteerGroup':
