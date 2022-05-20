@@ -82,6 +82,14 @@ switch(participantType){
     applyButton.href = pcaApplyButtonUrl
     applyButton.classList.remove('hide')
   break;
+  case 'academyintern':
+  case 'globalintern':
+  case 'corporateintern':
+  case 'capstoneintern':
+  case 'universityaffiliated':
+    applyButton.href = applyButtonUrl
+    applyButton.classList.remove('hide')
+  break;
   default:
     // We should never match this case!
     applyButton.href = '/what-are-you-talking-about-willis'
